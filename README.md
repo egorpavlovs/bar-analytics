@@ -1,4 +1,5 @@
-# API application template using Rails and GraphQL
+# It's pet project Bar Analytics
+Project made for learn and fun. Based on [fs/rails-base-graphql-api](https://github.com/fs/rails-base-graphql-api):
 
 ## Getting Started
 
