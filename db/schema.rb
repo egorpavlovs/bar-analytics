@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_11_142648) do
+ActiveRecord::Schema.define(version: 2021_07_11_165323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -52,6 +52,17 @@ ActiveRecord::Schema.define(version: 2021_07_11_142648) do
     t.index ["jti"], name: "index_refresh_tokens_on_jti"
     t.index ["token"], name: "index_refresh_tokens_on_token"
     t.index ["user_id"], name: "index_refresh_tokens_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "text", null: false
+    t.float "rating"
+    t.bigint "guest_id"
+    t.bigint "worker_id"
+    t.bigint "public_catering_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
