@@ -26,6 +26,7 @@ gem "sidekiq"
 gem "strong_migrations"
 
 group :development do
+  gem "graphiql-rails"
   gem "letter_opener"
   gem "listen"
   gem "spring"
