@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :activities, dependent: :destroy
   has_many :refresh_tokens, dependent: :destroy
   has_many :workers, dependent: :destroy
+  has_one  :guest, dependent: :destroy
 
   validates :email, presence: true, uniqueness: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
