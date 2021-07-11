@@ -1,5 +1,6 @@
 class Worker < ApplicationRecord
   belongs_to :user
+  belongs_to :public_catering
 
   ROLES = %w[
     waiter

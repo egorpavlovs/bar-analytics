@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_11_142139) do
+ActiveRecord::Schema.define(version: 2021_07_11_142648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 2021_07_11_142139) do
 
   create_table "guests", force: :cascade do |t|
     t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "public_caterings", force: :cascade do |t|
+    t.string "name"
+    t.float "rating"
+    t.string "address"
+    t.time "start_working"
+    t.time "end_working"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -67,6 +77,7 @@ ActiveRecord::Schema.define(version: 2021_07_11_142139) do
     t.datetime "end_work"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "public_catering_id"
   end
 
   add_foreign_key "activities", "users"
