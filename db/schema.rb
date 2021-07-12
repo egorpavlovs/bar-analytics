@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_12_213327) do
+ActiveRecord::Schema.define(version: 2021_07_12_221838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -48,6 +48,11 @@ ActiveRecord::Schema.define(version: 2021_07_12_213327) do
     t.bigint "beer_id", null: false
   end
 
+  create_table "beers_prices", id: false, force: :cascade do |t|
+    t.bigint "price_id", null: false
+    t.bigint "beer_id", null: false
+  end
+
   create_table "cafes", force: :cascade do |t|
     t.bigint "public_catering_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -73,6 +78,11 @@ ActiveRecord::Schema.define(version: 2021_07_12_213327) do
     t.bigint "coctail_id", null: false
   end
 
+  create_table "coctails_prices", id: false, force: :cascade do |t|
+    t.bigint "price_id", null: false
+    t.bigint "coctail_id", null: false
+  end
+
   create_table "comments", force: :cascade do |t|
     t.string "text"
     t.bigint "review_id"
@@ -94,6 +104,11 @@ ActiveRecord::Schema.define(version: 2021_07_12_213327) do
     t.bigint "food_id", null: false
   end
 
+  create_table "foods_prices", id: false, force: :cascade do |t|
+    t.bigint "price_id", null: false
+    t.bigint "food_id", null: false
+  end
+
   create_table "guests", force: :cascade do |t|
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -108,6 +123,18 @@ ActiveRecord::Schema.define(version: 2021_07_12_213327) do
 
   create_table "menus_wines", id: false, force: :cascade do |t|
     t.bigint "menu_id", null: false
+    t.bigint "wine_id", null: false
+  end
+
+  create_table "prices", force: :cascade do |t|
+    t.float "cost", null: false
+    t.string "currency", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "prices_wines", id: false, force: :cascade do |t|
+    t.bigint "price_id", null: false
     t.bigint "wine_id", null: false
   end
 
