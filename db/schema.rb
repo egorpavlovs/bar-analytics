@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_12_194458) do
+ActiveRecord::Schema.define(version: 2021_07_12_195603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -24,6 +24,25 @@ ActiveRecord::Schema.define(version: 2021_07_12_194458) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_activities_on_user_id"
+  end
+
+  create_table "beer_pubs", force: :cascade do |t|
+    t.bigint "public_catering_id", null: false
+    t.boolean "has_kicker"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cafes", force: :cascade do |t|
+    t.bigint "public_catering_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cocktail_bars", force: :cascade do |t|
+    t.bigint "public_catering_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "comments", force: :cascade do |t|
@@ -86,6 +105,13 @@ ActiveRecord::Schema.define(version: 2021_07_12_194458) do
     t.datetime "password_reset_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["password_reset_token"], name: "index_users_on_password_reset_token"
+  end
+
+  create_table "wine_bars", force: :cascade do |t|
+    t.bigint "public_catering_id", null: false
+    t.boolean "has_sommelier"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "workers", force: :cascade do |t|
