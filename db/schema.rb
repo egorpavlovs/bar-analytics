@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_12_195603) do
+ActiveRecord::Schema.define(version: 2021_07_12_213327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -33,6 +33,21 @@ ActiveRecord::Schema.define(version: 2021_07_12_195603) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "beers", force: :cascade do |t|
+    t.string "name"
+    t.float "abv"
+    t.float "ibu"
+    t.string "country"
+    t.string "type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "beers_menus", id: false, force: :cascade do |t|
+    t.bigint "menu_id", null: false
+    t.bigint "beer_id", null: false
+  end
+
   create_table "cafes", force: :cascade do |t|
     t.bigint "public_catering_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -45,6 +60,19 @@ ActiveRecord::Schema.define(version: 2021_07_12_195603) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "coctails", force: :cascade do |t|
+    t.string "name"
+    t.string "alcogolic_composition"
+    t.string "type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "coctails_menus", id: false, force: :cascade do |t|
+    t.bigint "menu_id", null: false
+    t.bigint "coctail_id", null: false
+  end
+
   create_table "comments", force: :cascade do |t|
     t.string "text"
     t.bigint "review_id"
@@ -54,10 +82,33 @@ ActiveRecord::Schema.define(version: 2021_07_12_195603) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "foods", force: :cascade do |t|
+    t.string "name"
+    t.string "product_composition"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "foods_menus", id: false, force: :cascade do |t|
+    t.bigint "menu_id", null: false
+    t.bigint "food_id", null: false
+  end
+
   create_table "guests", force: :cascade do |t|
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "menus", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "menus_wines", id: false, force: :cascade do |t|
+    t.bigint "menu_id", null: false
+    t.bigint "wine_id", null: false
   end
 
   create_table "public_caterings", force: :cascade do |t|
@@ -110,6 +161,16 @@ ActiveRecord::Schema.define(version: 2021_07_12_195603) do
   create_table "wine_bars", force: :cascade do |t|
     t.bigint "public_catering_id", null: false
     t.boolean "has_sommelier"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "wines", force: :cascade do |t|
+    t.string "name"
+    t.float "abv"
+    t.string "country"
+    t.string "type"
+    t.bigint "year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
