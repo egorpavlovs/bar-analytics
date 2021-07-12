@@ -3,6 +3,7 @@ class Worker < ApplicationRecord
   belongs_to :public_catering
 
   has_many :reviews, dependent: :nil
+  has_many :comments, dependent: :nil
 
   ROLES = %w[
     waiter
