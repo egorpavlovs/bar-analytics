@@ -178,9 +178,9 @@ ActiveRecord::Schema.define(version: 2021_07_12_221838) do
     t.string "password_digest", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "avatar_data"
     t.string "password_reset_token"
     t.datetime "password_reset_sent_at"
+    t.text "avatar_data"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["password_reset_token"], name: "index_users_on_password_reset_token"
   end
@@ -207,7 +207,7 @@ ActiveRecord::Schema.define(version: 2021_07_12_221838) do
     t.string "role"
     t.float "rating", default: 0.0, null: false
     t.float "salary"
-    t.datetime "beginning_work", default: "2021-07-11 13:32:19", null: false
+    t.datetime "beginning_work", default: "2021-08-08 11:07:13", null: false
     t.datetime "end_work"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -1,5 +1,7 @@
 FactoryBot.define do
   factory :worker do
+    user { build(:user) }
+    public_catering { build(:public_catering) }
     role { "waiter" }
     rating { 12.2 }
     salary { 10_000 }
