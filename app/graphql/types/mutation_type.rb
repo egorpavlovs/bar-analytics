@@ -8,5 +8,7 @@ module Types
     field :request_password_recovery, mutation: Mutations::RequestPasswordRecovery
     field :presign_data, mutation: Mutations::PresignData
     field :update_password, mutation: Mutations::UpdatePassword
+    field :create_worker, mutation: Mutations::CreateWorker
+    field :create_guest, mutation: Mutations::CreateGuest
   end
 end
