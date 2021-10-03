@@ -44,7 +44,7 @@ blocks:
       jobs:
       - name: Run RSpec
         commands:
-          - bin/tests
+          - bin/rspec
 
       - name: Run Quality
         commands:
