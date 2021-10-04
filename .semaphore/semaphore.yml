@@ -30,8 +30,8 @@ global_job_config:
       - export PASSWORD_RECOVERY_LINK_TEMPLATE="http://lvh.me:5000/password_reset?token=%{password_reset_token}"
       # - sem-service start postgres
       # - sem-service start redis
-      - ./bin/setup
       - checkout
+      - ./bin/setup
 
 blocks:
   - name: Run
