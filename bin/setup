@@ -1,10 +1,18 @@
-#!/usr/bin/env sh
+#!/usr/bin/env ruby
+require 'fileutils'
 
-set -e
+# path to your application root.
+APP_ROOT = File.expand_path('..', __dir__)
 
-if [ ! -f .env ]; then
-  cp .env.example .env
-fi
+def system!(*args)
+  system(*args) || abort("\n== Command #{args} failed ==")
+end
 
-system! 'bin/rails db:create db:schema:load'
-system! 'bin/rails db:seed'
+FileUtils.chdir APP_ROOT do
+  cp '.env.example', '.env' unless File.exist?('.env')
+
+  system! 'bundle install'
+  system! 'bin/rails db:create db:schema:load'
+  system! 'bin/rails db:seed'
+  system! 'bin/rails restart'
+end
