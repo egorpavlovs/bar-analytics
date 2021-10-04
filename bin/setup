@@ -9,7 +9,7 @@ def system!(*args)
 end
 
 FileUtils.chdir APP_ROOT do
-  system! cp '.env.example', '.env' unless File.exist?('.env')
+  FileUtils.cp '.env.example', '.env' unless File.exist?('.env')
 
   system! 'bundle install'
   system! 'bin/rails db:create db:schema:load'
