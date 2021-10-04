@@ -6,11 +6,5 @@ if [ ! -f .env ]; then
   cp .env.example .env
 fi
 
-if [ ! -f docker-compose.override.yml ]; then
-  cp docker-compose.linux.yml docker-compose.override.yml
-fi
-
-docker-compose up --detach
-docker-compose exec app bin/rails db:create db:schema:load
-docker-compose exec app bin/rails db:seed
-docker-compose stop
+system! 'bin/rails db:create db:schema:load'
+system! 'bin/rails db:seed'
