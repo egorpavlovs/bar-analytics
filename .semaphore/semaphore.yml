@@ -29,8 +29,8 @@ global_job_config:
       - export MAILER_SENDER_ADDRESS="noreply@example.com"
       - export PASSWORD_RECOVERY_LINK_TEMPLATE="http://lvh.me:5000/password_reset?token=%{password_reset_token}"
       - sem-service start postgres
-      - psql -U postgres -h localhost -c "CREATE USER developer WITH PASSWORD 'developer';"
-      - psql -U postgres -h localhost -c "ALTER USER developer WITH SUPERUSER;"
+      - psql -U postgres -h localhost -c "CREATE USER semaphore WITH PASSWORD 'semaphore';"
+      - psql -U postgres -h localhost -c "ALTER USER semaphore WITH SUPERUSER;"
       - sem-service start redis
       - checkout
       - ./bin/setup
