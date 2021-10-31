@@ -1,16 +1,18 @@
-#!/usr/bin/env sh
+#!/usr/bin/env ruby
+require 'fileutils'
 
-set -e
+# path to your application root.
+APP_ROOT = File.expand_path('..', __dir__)
 
-if [ ! -f .env ]; then
-  cp .env.example .env
-fi
+def system!(*args)
+  system(*args) || abort("\n== Command #{args} failed ==")
+end
 
-if [ ! -f docker-compose.override.yml ]; then
-  cp docker-compose.linux.yml docker-compose.override.yml
-fi
+FileUtils.chdir APP_ROOT do
+  FileUtils.cp '.env.example', '.env' unless File.exist?('.env')
 
-docker-compose up --detach
-docker-compose exec app bin/rails db:create db:schema:load
-docker-compose exec app bin/rails db:seed
-docker-compose stop
+  system! 'bundle install'
+  system! 'bin/rails db:create db:schema:load'
+  system! 'bin/rails db:seed'
+  system! 'bin/rails restart'
+end
