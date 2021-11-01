@@ -10,5 +10,14 @@ module Types
     field :update_password, mutation: Mutations::UpdatePassword
     field :create_worker, mutation: Mutations::CreateWorker
     field :create_guest, mutation: Mutations::CreateGuest
+    field :create_public_catering, mutation: Mutations::CreatePublicCatering
+    field :create_beer_pub, mutation: Mutations::CreateBeerPub
+    field :create_cocktail_bar, mutation: Mutations::CreateCocktailBar
+    field :create_wine_bar, mutation: Mutations::CreateWineBar
+    field :create_cafe, mutation: Mutations::CreateCafe
+    field :create_beer, mutation: Mutations::CreateBeer
+    field :create_cocktail, mutation: Mutations::CreateCocktail
+    field :create_comment, mutation: Mutations::CreateComment
+    field :create_food, mutation: Mutations::CreateFood
   end
 end
