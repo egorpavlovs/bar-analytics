@@ -7,11 +7,7 @@ module Mutations
     def resolve(input:)
       create_beer = Beer.new(input.to_h)
 
-      if create_beer
-        create_beer
-      else
-        execution_error(error_data: create_beer.errors)
-      end
+      create_beer || execution_error(error_data: create_beer.errors)
     end
   end
 end
