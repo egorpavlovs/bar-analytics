@@ -12,6 +12,7 @@ gem "aws-sdk-s3"
 gem "bcrypt"
 gem "bootsnap", require: false
 gem "enumerize"
+gem "graphiql-rails"
 gem "graphql"
 gem "graphql-batch"
 gem "graphql-rails_logger"
@@ -26,7 +27,6 @@ gem "sidekiq"
 gem "strong_migrations"
 
 group :development do
-  gem "graphiql-rails"
   gem "letter_opener"
   gem "listen"
   gem "spring"
