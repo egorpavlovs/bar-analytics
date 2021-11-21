@@ -1,0 +1,11 @@
+{
+  "data": {
+    "createPublicCatering": {
+      "name": "PublicCateringName",
+      "rating": 89.1,
+      "address": "UK, London",
+      "startWorking": "2000-01-01T13:10:20Z",
+      "endWorking": "2000-01-01T21:10:20Z"
+    }
+  }
+}
