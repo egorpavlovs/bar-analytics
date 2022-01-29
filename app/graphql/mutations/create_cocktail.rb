@@ -1,11 +1,11 @@
 module Mutations
   class CreateCocktail < BaseMutation
-    argument :input, Types::CreateCoctailInput, required: true
+    argument :input, Types::CreateCocktailInput, required: true
 
-    type Types::CoctailType
+    type Types::CocktailType
 
     def resolve(input:)
-      create_cocktail = Coctail.new(input.to_h)
+      create_cocktail = Cocktail.new(input.to_h)
 
       if create_cocktail.save
         create_cocktail

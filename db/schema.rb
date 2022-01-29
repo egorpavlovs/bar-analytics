@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_14_200453) do
+ActiveRecord::Schema.define(version: 2022_01_29_124121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -65,17 +65,17 @@ ActiveRecord::Schema.define(version: 2021_11_14_200453) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "coctails", force: :cascade do |t|
+  create_table "cocktails", force: :cascade do |t|
     t.string "name"
     t.string "alcogolic_composition"
-    t.string "type"
+    t.string "kind"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "coctails_menus", id: false, force: :cascade do |t|
+  create_table "cocktails_menus", id: false, force: :cascade do |t|
     t.bigint "menu_id", null: false
-    t.bigint "coctail_id", null: false
+    t.bigint "cocktail_id", null: false
   end
 
   create_table "coctails_prices", id: false, force: :cascade do |t|

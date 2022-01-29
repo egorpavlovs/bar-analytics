@@ -2,7 +2,7 @@
   "data": {
     "createCocktail": {
       "name": "CocktailName",
-      "alcogolicComposition": "first element, secon element"
+      "alcogolicComposition": "first element, second element"
     }
   }
 }

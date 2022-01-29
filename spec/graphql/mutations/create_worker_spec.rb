@@ -13,8 +13,8 @@ describe Mutations::CreateWorker do
             role: "waiter"
             rating: 100.0
             salary: 100.2
-            beginningWork: "2016-01-01T14:10:20+01:00"
-            endWork: "2016-01-01T22:10:20+01:00"
+            beginningWork: "2016-01-01T14:10:20+00:00"
+            endWork: "2016-01-01T22:10:20+03:00"
           }
         ) {
           userId

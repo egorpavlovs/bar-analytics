@@ -2,12 +2,12 @@
 
 require "rails_helper"
 
-describe Coctail do
-  let(:coctail) { build(:coctail) }
+describe Cocktail do
+  let(:cocktail) { build(:cocktail) }
 
   describe "validations" do
     it "has a valid factory" do
-      expect(coctail).to be_valid
+      expect(cocktail).to be_valid
     end
   end
 end

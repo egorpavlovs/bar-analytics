@@ -6,8 +6,9 @@ describe Mutations::CreateCocktail do
       mutation {
         createCocktail (
           input: {
-            name: "CoctailName"
-            alcogolicComposition: "first element, secon element"
+            name: "CocktailName"
+            alcogolicComposition: "first element, second element"
+            kind: "refreshing"
           }
         ) {
           name

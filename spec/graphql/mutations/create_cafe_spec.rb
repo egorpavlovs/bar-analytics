@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Mutations::CreateBeer do
+describe Mutations::CreateCafe do
   let(:public_catering) { create(:public_catering) }
   let(:query) do
     <<-GRAPHQL
