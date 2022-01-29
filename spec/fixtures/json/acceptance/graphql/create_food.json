@@ -1,0 +1,8 @@
+{
+  "data": {
+    "createFood": {
+      "name": "FoodName",
+      "productComposition": "Milk, Cola, Snacks"
+    }
+  }
+}

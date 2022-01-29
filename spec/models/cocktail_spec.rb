@@ -2,12 +2,12 @@
 
 require "rails_helper"
 
-describe Comment do
-  let(:comment) { build(:comment) }
+describe Cocktail do
+  let(:cocktail) { build(:cocktail) }
 
   xdescribe "validations" do
     it "has a valid factory" do
-      expect(comment).to be_valid
+      expect(cocktail).to be_valid
     end
   end
 end

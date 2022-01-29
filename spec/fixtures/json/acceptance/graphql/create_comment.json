@@ -1,0 +1,11 @@
+{
+  "data": {
+    "createComment": {
+      "text": "CommentText",
+      "reviewId": "1",
+      "guestId": "1",
+      "workerId": "1",
+      "publicCateringId": "1"
+    }
+  }
+}

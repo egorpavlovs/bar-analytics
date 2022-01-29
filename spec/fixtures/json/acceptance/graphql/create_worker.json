@@ -1,0 +1,13 @@
+{
+  "data": {
+    "createWorker": {
+      "userId": "1",
+      "publicCateringId": "1",
+      "role": "waiter",
+      "rating": 100.0,
+      "salary": 100.2,
+      "beginningWork": "2016-01-01T14:10:20Z",
+      "endWork": "2016-01-01T19:10:20Z"
+    }
+  }
+}

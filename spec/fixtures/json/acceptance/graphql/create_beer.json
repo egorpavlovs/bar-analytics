@@ -1,0 +1,10 @@
+{
+  "data": {
+    "createBeer": {
+      "name": "BeerName",
+      "abv": 12.1,
+      "ibu": 13.3,
+      "country": "UK"
+    }
+  }
+}
