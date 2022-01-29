@@ -26,7 +26,7 @@ describe Mutations::CreateComment do
     GRAPHQL
   end
 
-  context "with valid data" do
+  xcontext "with valid data" do
     it_behaves_like "graphql request" do
       let(:fixture_path) { "json/acceptance/graphql/create_comment.json" }
     end
